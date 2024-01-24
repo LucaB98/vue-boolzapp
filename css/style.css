@@ -17,7 +17,7 @@ body{
 
 #header-contact{
     background-color:   #EAEAEA ;
-    height: 30px;
+    
 }
 
 .navbar-collapse{
@@ -26,4 +26,23 @@ body{
 
 .nav-link{
     padding: 0;
+}
+
+.jumbotron{
+    background-color: #8EDAFC;
+}
+
+.jumbotron a{
+    color: grey;
+}
+
+.alert{
+    width: 100%;
+}
+
+a .fa-bell-slash{
+    color: #8EDAFC;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
 }

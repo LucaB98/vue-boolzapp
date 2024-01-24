@@ -15,7 +15,8 @@
 
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
-
+    <!-- data js -->
+    <script src="js/data.js"></script>
     <!-- Vue js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- js -->
@@ -31,9 +32,9 @@
                         <nav class="navbar navbar-expand-lg bg-body-tertiary">
                             <div class="container-fluid d-flex justify-content-between">
                                 <a class="navbar-brand" href="#">
-                                    <img src="/img" alt="" width="30" height="24">
+                                    <img :src="`/img/avatar${user.avatar}.jpg`" :alt="`${user.name}`" width="30" height="24">
                                 </a>
-                                <a class="navbar-brand" href="#">Nome Utente</a>
+                                <a class="navbar-brand" href="#">{{user.name}}</a>
                                 <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
                                     <ul class="navbar-nav d-flex ">
                                         <li class="nav-item">
@@ -57,7 +58,7 @@
                             <div class="icon-alert">
                                 <a href="#"><i class="fa-solid fa-bell-slash"></i></a>
                             </div>
-                            <div class="message-alert">
+                            <div class="message-alert ms-3">
                                 <h5>Ricevi notifiche di nuovi messaggi</h5>
                                 <a href="#">Attiva notifiche desktop</a>
                             </div>
@@ -69,20 +70,66 @@
                             <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
-                    <div id="main-contact" class="container d-flex flex-wrap align-items-center">
-                        <figure>
-                            <img src="img/" alt="" width="30" height="24">
-                        </figure>
-                        <div class="info m-2">
-                            <h6 class="m-0">Michele</h6>
-                            <span class="info-secondary text-secondary">Ultimo messaggio inviato</span>
-                        </div>
-                        <div class="time">
-                            <span class="info-secondary text-secondary">12:00</span>
+                    <div id="main-contact" class="container">
+                        <div v-for="contact in contacts" class="contact d-flex flex-wrap align-items-center justify-content-around ">
+                            <figure>
+                                <img :src="`/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                            </figure>
+                            <div class="info pb-2">
+                                <h6 class="m-0">{{contact.name}}</h6>
+                                <span class="info-secondary text-secondary">Ultimo messaggio inviato</span>
+                            </div>
+                            <div class="time">
+                                <span class="info-secondary text-secondary">12:00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col col-8"></div>
+                <div class="col col-8">
+                    <header id="header-chat">
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                            <div class="container-fluid d-flex justify-content-between">
+                                <a class="navbar-brand" href="#">
+                                    <img :src="`/img/avatar${user.avatar}.jpg`" :alt="`${user.name}`" >
+                                </a>
+                                <a class="navbar-brand" href="#">{{user.name}}</a>
+                                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                                    <ul class="navbar-nav d-flex ">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i class="fa-solid fa-paperclip"></i></a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </header>
+                    <main id="main-chat">
+                        <div class="message">
+                            <span class="form sent">Hai portato a spasso il cane?<span class="time-message">12:00</span></span>
+                        </div>
+                        <div class="message">
+                            <span class="form sent">Ricordati di stendere i panni<span class="time-message">12:00</span></span>
+                        </div>
+                        <div class="message">
+                            <span class="form received">Tutto fatto!<span class="time-message">12:00</span></span>
+                        </div>
+                    </main>
+                    <footer id="footer-chat">
+                        <div class="chat  d-flex justify-content-center align-items-center h-100 ">
+                            <a href="#"><i class="fa-regular fa-face-smile emoticon"></i></a>
+                            <input type="text"  placeholder="Scrivi un messaggio..." class="m-3 input-chat">
+                            <a href="#"><i class="fa-solid fa-microphone emoticon"></i></a>
+                        </div>
+                    </footer>
+                </div>
             </div>
         </div>
     </div>

@@ -46,3 +46,20 @@ a .fa-bell-slash{
     padding: 10px;
     border-radius: 20px;
 }
+
+#main-contact{
+    width: 100%;
+}
+
+.info{
+    width: 80%;
+}
+
+.info-secondary{
+    font-size: 12px;
+}
+
+.time{
+    align-self: self-start;
+    justify-items: end;
+}

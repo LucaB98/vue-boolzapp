@@ -2,3 +2,28 @@ body{
     height: 100vh;
     background-image: linear-gradient(#009688 130px, #D9DBD4 100px);
 }
+
+.row{
+    height: 100vh;
+}
+
+.col{
+    height: 90vh;
+    width: 100wh;
+    background-color: white;
+    padding: 0;
+    
+}
+
+#header-contact{
+    background-color:   #EAEAEA ;
+    height: 30px;
+}
+
+.navbar-collapse{
+    width: 100%;
+}
+
+.nav-link{
+    padding: 0;
+}

@@ -1,6 +1,6 @@
 body{
     height: 100vh;
-    background-image: linear-gradient(#009688 130px, #D9DBD4 100px);
+    background-image: linear-gradient(#009688 15%, #D9DBD4 15%);
 }
 
 img{
@@ -9,15 +9,16 @@ img{
     border-radius: 80px;
 }
 
-.row{
-    height: 100vh;
+#root{
+   height: 100vh;
 }
 
-.col{
+#root .container{
     height: 90vh;
+}
+.col{
     background-color: white;
     padding: 0;
-    
 }
 
 #header-contact{
@@ -26,18 +27,20 @@ img{
 }
 
 #header-chat{
-    height: 75px;
+    flex-shrink: 1;
 }
 
 #main-chat{
     height: calc(100% - 155px);
     background-image: url(/img/mine.jpg);
     overflow-y: scroll;
+    flex-grow: 1;
 
 }
 
 #footer-chat{
     height: 80px;
+    flex-shrink: 1;
 }
 
 .navbar-collapse{
@@ -69,13 +72,12 @@ a .fa-bell-slash{
 
 #main-contact{
     width: 100%;
-    height: 567px;
     overflow: auto;
     padding: 0;
 }
 
 .contact{
-    height: 70px;
+  height: 80px; 
 }
 
 .contact:hover{
@@ -109,33 +111,34 @@ a .fa-bell-slash{
     padding: 5px;
 }
 
-.message{
-    max-width: 300px;
-    margin: 10px 0;
+.message-container{
     display: flex;
-    
 }
 
-
-.form{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 5px;
+.message-container.sent{
+    justify-content: flex-end;
 }
 
-.sent{
+.message-container.received{
+    justify-content: flex-start;
+}
+
+.message-container.sent .message{
     background-color: #D5F9BA;
-    
 }
 
-.received{
+.message-container.received .message{
     background-color: white;
 }
 
-.time-message{
-    font-size: 10px;
-    margin-left: 10px;
-    align-self: flex-end;
+.message-container .message p{
+    margin-bottom: 0;
 }
+
+.message-container .message time{
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: lightgray
+}
+

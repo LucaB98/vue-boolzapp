@@ -1,9 +1,9 @@
-
- const user = {
+const data = {
+  user :{
     name: 'Luca Bellan',
     avatar: '_io'
-  }
- const contacts = [
+  },
+  contacts : [
     {
       id: 1,
       name: 'Michele',
@@ -188,5 +188,5 @@
     }
   ]
 
-
+}
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Luca Bellan">
     <meta name="description" content="">
-    <title>Document</title>
+    <title>Boolzapp</title>
 
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,15 +24,15 @@
 
 </head>
 <body>
-    <div id="root">
+    <div id="root" class="d-flex justify-content-center align-items-center">
         <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col col-4">
-                    <header id="header-contact">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col col-4 p-0 h-100 d-flex flex-column">
+                    <header id="header-contact flex-shrink-1">
                         <nav class="navbar navbar-expand-lg bg-body-tertiary">
                             <div class="container-fluid d-flex justify-content-between">
                                 <a class="navbar-brand" href="#">
-                                    <img :src="`/img/avatar${user.avatar}.jpg`" :alt="`${user.name}`" width="30" height="24">
+                                    <img :src="`/img/avatar${user.avatar}.jpg`" :alt="user.name">
                                 </a>
                                 <a class="navbar-brand" href="#">{{user.name}}</a>
                                 <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
@@ -53,7 +53,7 @@
                             </div>
                         </nav>
                     </header>
-                    <div class="jumbotron">
+                    <div class="jumbotron flex-shrink-1">
                         <div class="alert d-flex align-items-center justify-content-around">
                             <div class="icon-alert">
                                 <a href="#"><i class="fa-solid fa-bell-slash"></i></a>
@@ -64,14 +64,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="input-group mb-3">
+                    <div class=" flex-shrink-1">
+                        <div class="input-group">
                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
                             <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
-                    <div id="main-contact" class="container">
-                        <div v-for="contact in contacts" class="contact d-flex flex-wrap align-items-center justify-content-around ">
+                    <div id="main-contact" class="container flex-grow-1">
+                        <div v-for="contact in contacts":key="contact.id" class="contact d-flex flex-wrap align-items-center justify-content-around ">
                             <figure>
                                 <img :src="`/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </figure>
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col col-8">
+                <div class="col col-8 h-100 ">
                     <header id="header-chat">
                         <nav class="navbar navbar-expand-lg bg-body-tertiary">
                             <div class="container-fluid d-flex justify-content-between">
@@ -112,15 +112,20 @@
                         </nav>
                     </header>
                     <main id="main-chat">
-                        <div class="message">
-                            <span class="form sent">Hai portato a spasso il cane?<span class="time-message">12:00</span></span>
-                        </div>
-                        <div class="message">
-                            <span class="form sent">Ricordati di stendere i panni<span class="time-message">12:00</span></span>
-                        </div>
-                        <div class="message">
-                            <span class="form received">Tutto fatto!<span class="time-message">12:00</span></span>
-                        </div>
+                        <ul class="px-3">
+                            <li class="message-container p-3 sent">
+                                <div class="message p-2 rounded-3">
+                                    <p>Hai portato a spasso il cane?</p>
+                                    <time datetime="2021-08-03T09:53">31/01/2022 - 12:00</time>
+                                </div>
+                            </li>
+                            <li class="message-container p-3 received">
+                                <div class="message p-2 rounded-3">
+                                    <p>si!</p>
+                                    <time datetime="2021-08-03T09:53">31/01/2022 - 12:01</time>
+                                </div>
+                            </li>
+                        </ul>
                     </main>
                     <footer id="footer-chat">
                         <div class="chat  d-flex justify-content-center align-items-center h-100 ">

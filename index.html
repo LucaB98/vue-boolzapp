@@ -67,11 +67,11 @@
                     <div class=" flex-shrink-1">
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model.trim="searchText">
                         </div>
                     </div>
                     <div id="main-contact" class="container flex-grow-1">
-                        <div v-for="contact in contacts":key="contact.id" @click=" currentId = contact.id" class="contact d-flex flex-wrap align-items-center justify-content-around ">
+                        <div v-for="contact in filteredContacts":key="contact.id" @click=" currentId = contact.id" class="contact d-flex flex-wrap align-items-center justify-content-around ">
                             <figure>
                                 <img :src="`/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </figure>

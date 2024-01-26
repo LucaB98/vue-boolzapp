@@ -12,6 +12,7 @@ const app = createApp({
             contacts,
             currentId: 1,
             newMessageText: '',
+            searchText: '',
         }
     },
     computed:{
@@ -19,8 +20,14 @@ const app = createApp({
             return this.contacts.find(contact => contact.id === this.currentId)
            },
         currentChat(){
-            return this.currentContact.messages`    `
-        }   
+            return this.currentContact.messages
+        },
+        filteredContacts(){
+            const searchTerm = this.searchText.toLowerCase();
+
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(searchTerm));
+            },
+           
 
     },
     methods:{

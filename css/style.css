@@ -43,6 +43,10 @@ img{
     flex-shrink: 1;
 }
 
+.navbar{
+    border-right: 1px solid lightgray;
+}
+
 .navbar-collapse{
     width: 100%;
 }
@@ -103,7 +107,7 @@ a .fa-bell-slash{
 
 .emoticon{
     font-size: 23px;
-    color: black;
+    color: #08E26A;
 }
 
 .input-chat{

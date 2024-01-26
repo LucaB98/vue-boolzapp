@@ -13,6 +13,7 @@ const app = createApp({
             currentId: 1,
             newMessageText: '',
             searchText: '',
+            lastMessage:'',
         }
     },
     computed:{
@@ -30,6 +31,7 @@ const app = createApp({
 
             return this.contacts.filter(contact => contact.name.toLowerCase().includes(searchTerm));
             },
+            
            
 
     },
@@ -46,7 +48,7 @@ const app = createApp({
 
         this.currentChat.push(newMessage);
         this.newMessageText = '';
-// risposta al messaggio inviato
+    // risposta al messaggio inviato
         setTimeout(() => {
             const newMessage ={
                 id: new Date().getTime(),

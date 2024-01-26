@@ -11,8 +11,46 @@ const app = createApp({
             user,
             contacts,
             currentId: 1,
+            newMessageText: '',
         }
+    },
+    computed:{
+        currentContact(){
+            return this.contacts.find(contact => contact.id === this.currentId)
+           },
+        currentChat(){
+            return this.currentContact.messages`    `
+        }   
+
+    },
+    methods:{
+     sendMessage(){
+        if(!this.newMessageText)return;
+        const newMessage ={
+            id: new Date().getTime(),
+            date: new Date().toLocaleDateString(),
+            status: 'sent',
+            text: this.newMessageText
+        }
+
+        this.currentChat.push(newMessage);
+        this.newMessageText = '';
+
+        setTimeout(() => {
+            const newMessage ={
+                id: new Date().getTime(),
+                date: new Date().toLocaleDateString(),
+                status: 'received',
+                text: 'ok'
+            }
+            this.currentChat.push(newMessage);
+        },1000)
+     }
+        
     }
+
+
+    
 })
 
 app.mount('#root')

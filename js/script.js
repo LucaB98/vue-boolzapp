@@ -16,12 +16,15 @@ const app = createApp({
         }
     },
     computed:{
+        // contatto corrente alla chat
         currentContact(){
             return this.contacts.find(contact => contact.id === this.currentId)
            },
+        //    caht corrente alla chat
         currentChat(){
             return this.currentContact.messages
         },
+        // filtro di ricerca nei contatti
         filteredContacts(){
             const searchTerm = this.searchText.toLowerCase();
 
@@ -31,6 +34,7 @@ const app = createApp({
 
     },
     methods:{
+        // invio messaggio e aggiungerlo
      sendMessage(){
         if(!this.newMessageText)return;
         const newMessage ={
@@ -42,7 +46,7 @@ const app = createApp({
 
         this.currentChat.push(newMessage);
         this.newMessageText = '';
-
+// risposta al messaggio inviato
         setTimeout(() => {
             const newMessage ={
                 id: new Date().getTime(),

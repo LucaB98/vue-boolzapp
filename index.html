@@ -45,7 +45,7 @@
                             <div class="container-fluid d-flex justify-content-between">
                                 <!-- img -->
                                 <a class="navbar-brand" href="#">
-                                    <img :src="`/img/avatar${user.avatar}.jpg`" :alt="user.name">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
                                 </a>
                                 <!-- nome utente -->
                                 <a class="navbar-brand" href="#">{{user.name}}</a>
@@ -97,7 +97,7 @@
                         <div v-for="contact in filteredContacts" :key="contact.id" @click=" currentId = contact.id"
                             class="contact d-flex flex-wrap align-items-center justify-content-around ">
                             <figure>
-                                <img :src="`/img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </figure>
                             <div class="info pb-2">
                                 <h6 class="m-0">{{contact.name}}</h6>
@@ -117,7 +117,7 @@
                             <div class="container-fluid d-flex justify-content-between">
                                 <!-- immagine del contatto selezionato -->
                                 <a class="navbar-brand" href="#">
-                                    <img :src="`/img/avatar${currentContact.avatar}.jpg`"
+                                    <img :src="`img/avatar${currentContact.avatar}.jpg`"
                                         :alt="`${currentContact.name}`">
                                 </a>
                                 <!-- nome del contatto selezionato -->

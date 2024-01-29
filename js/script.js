@@ -13,7 +13,6 @@ const app = createApp({
             currentId: 1,
             newMessageText: '',
             searchText: '',
-            lastMessage:'',
         }
     },
     computed:{
